@@ -1,0 +1,50 @@
+<%- include('../partials/navbar.ejs')  %>
+<%- include('../partials/header.ejs')  %>
+
+<h1>Edit Product</h1>
+
+<form method="post" action="/product/<%= product._id %>?_method=patch">
+	<div class="mb-3">
+		<label for="exampleInputEmail1" class="form-label">Product Name</label>
+		<input
+			type="text"
+			name="productName"
+			class="form-control"
+			id="exampleInputEmail1"
+            value="<%= product.productName %>"
+		/>
+	</div>
+	<div class="mb-3">
+		<label for="exampleInputPassword1" class="form-label">Quantity</label>
+		<input
+			type="number"
+			name="quantity"
+			class="form-control"
+			id="exampleInputPassword1"
+            value="<%= product.quantity %>"
+		/>
+	</div>
+	<div class="mb-3">
+		<label for="exampleInputEmail1" class="form-label">Seller Name</label>
+		<input
+			type="text"
+			name="sellerName"
+			class="form-control"
+			id="exampleInputEmail1"
+            value="<%= product.sellerName %>"
+		/>
+	</div>
+	<div class="mb-3">
+		<label for="exampleInputPassword1" class="form-label">Price</label>
+		<input
+			type="number"
+			name="price"
+			class="form-control"
+			id="exampleInputPassword1"
+            value="<%= product.price %>"
+		/>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<%- include('../partials/footer.ejs')  %>
