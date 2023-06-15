@@ -18,7 +18,6 @@ router.get('/products/new', (req, res)=>{
     res.render('new.ejs');
 })
 
-
 // <------- Display all Products ------->
 router.get('/products', async(req, res)=>{
     try{
@@ -31,7 +30,6 @@ router.get('/products', async(req, res)=>{
 
 // <------- Save form details to DB of Products ------->
 router.post('/products', async(req, res)=>{
-
     const file = req.files.photo;
     try{
         await cloudinary.uploader.upload(file.tempFilePath, (err, result)=>{
